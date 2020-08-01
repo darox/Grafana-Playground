@@ -1,6 +1,6 @@
 grafana/var/plugins
 grafana/var/png
-grafan/grafana.db
+grafan/var/grafana.db
 influxdb/var/data
 influxdb/var/meta
 influxdb/var/wal
