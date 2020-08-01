@@ -1,2 +1,6 @@
-grafana/var/*
-influxdb/var/*
+grafana/var/plugins
+grafana/var/png
+grafan/grafan.db
+influxdb/var/data
+influxdb/var/meta
+influxdb/var/wal
