@@ -39,7 +39,7 @@ docker ps -a
 
 Ideally it should look like this
 
-![Image of docker ps](https://github.com/darox/Grafana-Playground/img/docker-ps.png)
+![Image of docker ps](https://github.com/darox/Grafana-Playground/blob/master/img/docker-ps.png)
 
 
 
