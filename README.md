@@ -1,3 +1,4 @@
+![Image of docker ps](https://github.com/darox/Grafana-Playground/blob/master/img/grafana.png)
 # Grafana-Playground
 This repository was created with the aim to make the start into Grafana easier. Grafa-Playground provides a full end-to-end environment to play around on your local machine. Spinning up the envrionment just takes a few minutes. The only requirements are a working internet connection and Docker + Docker Compose installed. 
 
