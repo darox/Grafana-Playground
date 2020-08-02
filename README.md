@@ -7,7 +7,7 @@ If you haven't already installed Docker and Docker Compose. Follow the official 
 
 ## Get the repo
 
-Clone this repo with
+Clone this repo
 ```
 git clone https://github.com/darox/Grafana-Playground
 ```
@@ -41,6 +41,18 @@ Ideally it should look like this
 
 ![Image of docker ps](https://github.com/darox/Grafana-Playground/blob/master/img/docker-ps.png)
 
+
+## The real stuff
+
+Open a webbrowser and head over to http://localhost:3000 in order to login to Grafana. The initial login credentials are admin/admin, but you will be prompted to set a new password. Go to configuration --> Data Sources --> Add Data Source --> InfluxDB. In fact there are only three things you have to configure:
+Name: telegraf
+URL: http://influxdb:8086
+Database: telegraf
+
+In a production environment it's highly recommended to configure username, password and TLS. 
+
+
+Time to set up our first dashboard. Go to the dashbaord section in Grafana and click import. Luckily you don't have to create one by yourself. There's a file called telegraf.json in the folder grafana/dashboards. Copy the content of this file and paste it into the form and hit load. The metrics gathered by Telegraf are presented to you. Congratulations, you have your first Grafana environment up and ready!
 
 
 
