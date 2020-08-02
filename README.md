@@ -5,14 +5,14 @@ This repository was created with the aim to make the start into Grafana easier. 
 
 If you haven't already installed Docker and Docker Compose. Follow the official documentation to install Docker https://docs.docker.com/get-docker/ and Docker Compose https://docs.docker.com/compose/install/. 
 
-##Get the repo
+## Get the repo
 
 Clone this repo with
 ```
 git clone https://github.com/darox/Grafana-Playground
 ```
 
-##Spin up the environment
+## Spin up the environment
 
 Now it's time to spin up the environment. It makes sense to start the environment in the foreground to check for errors
 
