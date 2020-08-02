@@ -45,8 +45,8 @@ Ideally it should look like this
 ## The real stuff
 
 Open a webbrowser and head over to http://localhost:3000 in order to login to Grafana. The initial login credentials are admin/admin, but you will be prompted to set a new password. Go to configuration --> Data Sources --> Add Data Source --> InfluxDB. In fact there are only three things you have to configure:
-Name: telegraf
-URL: http://influxdb:8086
+Name: telegraf,
+URL: http://influxdb:8086,
 Database: telegraf
 
 In a production environment it's highly recommended to configure username, password and TLS. 
