@@ -22,21 +22,16 @@ Now it's time to spin up the environment. It makes sense to start the environmen
 
 ```
 docker compose up
-
 ```
 
 The environment can also be started in the background with the option -d
 
 ```
-
 docker compose up -d
-
 ```
 
 Let's check if all containers are running
-
 ```
-
 docker ps -a
 ```
 
@@ -65,14 +60,12 @@ So far the envrionment is not ready for storing logfiles. But we will change thi
 
 ```
 docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
-
 ```
 
 Check if the logging driver is installed and enabled
 
 ```
 docker plugin ls
-
 ```
 
 As soon Grafana is ready add the Loki data source with url: http://loki:3100. there's a premade Loki Dashboard in the Grafana folder available. This dashboard shows all lines containg the word "error" for the Grafana, Influxdb and Telegraf container. 
