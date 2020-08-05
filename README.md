@@ -78,7 +78,17 @@ docker plugin ls
 As soon Grafana is ready add the Loki data source with url: http://loki:3100. there's a premade Loki Dashboard in the Grafana folder available. This dashboard shows all lines containg the word "error" for the Grafana, Influxdb and Telegraf container. 
 
 
-Note that in the free version of Docker, only one logging driver can be specified. If you run the command "docker logs grafana-playground_1" and the logging driver is set to Loki, nothing will be returned. Uncomment the section if you want to check for errors with "docker logs". 
+Note that in the free version of Docker, only one logging driver can be specified. If you run the command 
+
+```
+docker logs grafana-playground_1
+```
+
+and the logging driver is set to Loki, nothing will be returned. Uncomment the section if you want to check for errors with
+
+```
+docker logs
+```
 
 
 
