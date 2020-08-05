@@ -38,7 +38,7 @@ Let's check if all containers are running
 ```
 
 docker ps -a
-
+```
 
 
 
