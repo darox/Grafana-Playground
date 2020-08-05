@@ -94,10 +94,9 @@ docker logs
 ## Permissions
 
 If you prefer to run docker commands without root escalation, add your user to the Docker group.
-
-
+```
 sudo usermod -aG docker dario
-
+```
 
 
 
