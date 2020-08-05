@@ -21,7 +21,7 @@ git clone https://github.com/darox/Grafana-Playground
 Now it's time to spin up the environment. It makes sense to start the environment in the foreground to check for errors
 
 ```
-sudo docker compose up
+docker compose up
 
 ```
 
@@ -29,7 +29,7 @@ The environment can also be started in the background with the option -d
 
 ```
 
-sudo docker compose up -d
+docker compose up -d
 
 ```
 
@@ -89,6 +89,14 @@ and the logging driver is set to Loki, nothing will be returned. Uncomment the s
 ```
 docker logs
 ```
+
+
+## Permissions
+
+If you prefer to run docker commands without root escalation, add your user to the Docker group.
+
+
+sudo usermod -aG docker dario
 
 
 
