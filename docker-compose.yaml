@@ -1,3 +1,7 @@
+#Written by Dario Mader 
+#Github https://github.com/darox
+#Date: 05.08.2020
+
 version: '3.8'
 services:
   grafana:
@@ -9,13 +13,17 @@ services:
       - type: bind
         source: ./grafana/etc
         target: /etc/grafana
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://localhost:3100/loki/api/v1/push"
     user: "root"
     ports:
-      - "3000:3000"
+      - "127.0.0.1:3000:3000"
   influxdb:
     image: "influxdb"
     ports:
-      - "8086:8086"
+      - "127.0.0.1:8086:8086"
     volumes:
       - type: bind
         source: ./influxdb/var
@@ -23,9 +31,32 @@ services:
       - type: bind
         source: ./influxdb/etc
         target: /etc/influxdb
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://localhost:3100/loki/api/v1/push"
   telegraf:
     image: "telegraf"
     volumes:
       - type: bind
         source: ./telegraf/etc
         target: /etc/telegraf
+    logging:
+      driver: loki
+      options:
+        loki-url: "http://localhost:3100/loki/api/v1/push"
+  loki:
+    image: grafana/loki
+    ports:
+      - "127.0.0.1:3100:3100"
+    user: "root"
+    volumes:
+      - type: bind
+        source: ./loki/etc
+        target: /etc/loki/
+      - type: bind
+        source: ./loki/storage/index
+        target: /tmp/loki/index
+      - type: bind
+        source: ./loki/storage/chunks
+        target: /tmp/loki/chunks

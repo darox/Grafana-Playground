@@ -39,7 +39,8 @@ Let's check if all containers are running
 
 docker ps -a
 
-```
+
+
 
 Ideally it should look like this
 
@@ -57,6 +58,29 @@ In a production environment it's highly recommended to configure username, passw
 
 
 Time to set up our first dashboard. Go to the dashbaord section in Grafana and click import. Luckily you don't have to create one by yourself. There's a file called telegraf.json in the folder grafana/dashboards. Copy the content of this file and paste it into the form and hit load. The metrics gathered by Telegraf are presented to you. Congratulations, you have your first Grafana environment up and ready!
+
+## Bonus
+
+So far the envrionment is not ready for storing logfiles. But we will change this with the help of Loki. Loki is a distributed logfile aggregation system which is maintained by Grafana Labs. Install the Loki docker logging driver 
+
+```
+docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
+
+```
+
+Check if the logging driver is installed and enabled
+
+```
+docker plugin ls
+
+```
+
+As soon Grafana is ready add the Loki data source with url: http://loki:3100. there's a premade Loki Dashboard in the Grafana folder available. This dashboard shows all lines containg the word "error" for the Grafana, Influxdb and Telegraf container. 
+
+
+Note that in the free version of Docker, only one logging driver can be specified. If you run the command "docker logs grafana-playground_1" and the logging driver is set to Loki, nothing will be returned. Uncomment the section if you want to check for errors with "docker logs". 
+
+
 
 
 
