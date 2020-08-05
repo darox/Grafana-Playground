@@ -1,2 +1,3 @@
 grafana/var
 influxdb/var
+loki/storage
