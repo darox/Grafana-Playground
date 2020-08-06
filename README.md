@@ -16,6 +16,14 @@ Clone this repo
 git clone https://github.com/darox/Grafana-Playground
 ```
 
+## Install Loki logging driver
+
+In order to send docker logs to Loki, we need to install the driver
+```
+docker plugin install grafana/loki-docker-driver:latest --alias loki --grant-all-permissions
+```
+
+
 ## Spin up the environment
 
 Now it's time to spin up the environment. It makes sense to start the environment in the foreground to check for errors
